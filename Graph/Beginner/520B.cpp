@@ -14,8 +14,7 @@ int main() {
 
     int t = 1;
     //cin>>t;
-    for (int tt = 0; tt < t; ++tt)
-    {
+    for (int tt = 0; tt < t; ++tt) {
     	int n, m; cin>>n>>m;
     	vector<int> dp(20001, INF); // 2 times max bound
     	dp[n] = 0;
@@ -39,7 +38,7 @@ int main() {
 			}
     	}
 
-    	cout<<dp[m]<<endl;
+    	cout << dp[m] << endl;
     }
     
     return 0;

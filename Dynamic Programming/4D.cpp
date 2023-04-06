@@ -14,19 +14,20 @@ int main() {
     //cin>>test;
     for (int tt = 0; tt < test; ++tt)
     {
-        int n, w, h; cin>>n>>w>>h;
+        int n, w, h; 
+        cin >> n >> w >> h;
         vector<pair<int, int>> env;
         map<pair<int,int>, int> pos;
-        for (int i = 0; i < n; ++i)
-        {
-            int width, height; cin>>width>>height;
+        for (int i = 0; i < n; ++i) {
+            int width, height; 
+            cin >> width >> height;
             if (width > w && height > h) {
                 env.push_back({width, height});
                 pos.insert({{width, height}, i+1});
             }
         }
 
-        if (env.empty()) cout<<0<<endl;
+        if (env.empty()) cout << 0 << endl;
         else {
             sort(env.begin(), env.end(), 
                 [&] (pair<int,int> p1, pair<int,int> p2) {
@@ -36,10 +37,8 @@ int main() {
             );
 
             vector<int> dp(env.size(), 1);
-            for (int i = 0; i < env.size()-1; ++i)
-            {
-                for (int j = i+1; j < env.size(); ++j)
-                {
+            for (int i = 0; i < env.size()-1; ++i) {
+                for (int j = i+1; j < env.size(); ++j) {
                     if (env[j].first > env[i].first && env[j].second > env[i].second) {
                         dp[j] = max(dp[j], dp[i]+1);
                     }
