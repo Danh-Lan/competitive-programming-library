@@ -1,0 +1,42 @@
+https://codeforces.com/blog/entry/107847
+
+From C1 we already have dp[i+1] = min(dp[i]+1, a[i])
+
+Suppose track[i] denotes ∑nj=idp[j] if dp[i]=a[i]
+
+We can precalculate array track
+
+Now suppose ap is changed to x and adp[i] denotes the length of longest good subarray which ends at index i in the updated array.
+
+It is easy to see that adp[i]=dp[i] for 1≤i<p. Now let q be the smallest index greater than p such that adp[q]=a[q] (It might be the case that there does not exist any such q which can be handled similarly). So we have 3 ranges to deal with — (1,p−1), (p,q−1) and (q,n).
+
+Now ∑p−1i=1adp[i] = ∑p−1i=1dp[i] (which can be stored as prefix sum).
+
+Also ∑ni=qadp[i] = track[q].
+
+Now we only left with range (p,q−1). An interesting observation is adp[i]=adp[i−1]+1 for p<i<q.
+
+This approach can be implemented neatly in many ways(one way is answer each query offline).
+
+Time complexity is O(n⋅log(n)).
+
+
+- Explain the a[i]-i array
+Suppose adp[p] = z.
+
+So q is the smallest index greater than p such that aq≤z+q−p.
+
+Now aq−q≤z−p. Note that z−p is fixed. So you can make a new array b such that bi=ai−i. You can make b before reading queries. You can use segment tree to find q now. In the intended solution, I am processing the values in sorted order. Thus this way I was able to avoid segment tree.
+
+- Calculate track array similarly to calculate ans :
+Use similar idea which we are using while answering all queries.
+
+Suppose dp[i]=a[i]. Now let q be the smallest index greater than i
+ such that dp[q]=a[q] if dp[i]=a[i]. So track[i]=∑q−1j=idp[j]+track[q]
+. Please note that I am assuming that dp[i]=a[i]
+
+Now note that dp[j]=a[i]+j−i for i≤j<q if dp[i]=a[i]
+. So you can easily compute the sum of this arithmetic progression.
+
+
+* this technique help isolate the a[i] and dp[i]+1 from the min, which help calculate easier
