@@ -4,6 +4,7 @@ using namespace std;
 
 const int MOD = 1e9 + 7;
 
+// maximum cartesian tree
 // same value --> left-most index
 vector<int> cartesian_tree_max(vector<int> &A) {
     int N = A.size();
@@ -128,3 +129,5 @@ int main() {
  
     return 0;
 }
+
+// 1748E

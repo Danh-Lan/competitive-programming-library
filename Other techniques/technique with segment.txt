@@ -1,6 +1,0 @@
-/*
-example problem : given n segment [l_i, r_i], count the number of appearence of each point 
-
-the technique is for each segment [l, r], we add 1 to l and substract 1 to r+1,
-then use prefix sum from the left most point of n segments
-*/

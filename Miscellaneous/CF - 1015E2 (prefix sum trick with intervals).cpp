@@ -1,3 +1,11 @@
+/*
+We have a bunch of interval [l, r]. 
+We want to calculate the number of apperance of each number in
+these intervals
+The trick is for each [l, r], we add 1 to a[l] and substract 1 to a[r+1],
+then calculate the prefix sum 
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

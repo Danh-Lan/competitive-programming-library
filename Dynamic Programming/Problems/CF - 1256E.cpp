@@ -10,14 +10,12 @@ int main() {
     freopen("output.txt", "w", stdout);
     #endif 
  
-    int test = 1;
-    //cin>>test;
-    for (int tt = 0; tt < test; ++tt)
-    {
-        int n; cin>>n;
+    int tt = 1;
+    //cin >> tt;
+    for (int test = 0; test < tt; ++test) {
+        int n; cin >> n;
         vector<pair<int,int>> a(n);
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             int num; cin>>num;
             a[i] = {num, i};
         }
@@ -33,8 +31,7 @@ int main() {
         group[0] = group[1] = 0;
         group[2] = 3; group[3] = 4; group[4] = 5;
 
-        for (int i = 5; i < n; ++i)
-        {
+        for (int i = 5; i < n; ++i) {
             int opt = 3;
             dp[i] = dp[i-3] + a[i].first-a[i-2].first;
 
@@ -51,8 +48,7 @@ int main() {
 
         int ans[n] = {0};
         int cnt = 0;
-        for (int i = n-1; i >= 0; --i)
-        {
+        for (int i = n-1; i >= 0; --i) {
             ++cnt;
             int type = group[i];
             for (int j = i; j > i-type; --j) {
@@ -61,11 +57,10 @@ int main() {
             i -= type-1;
         }
 
-        cout<<dp[n-1]<<" "<<cnt<<endl;
-        for (int i = 0; i < n; ++i)
-        {
-            cout<<ans[i]<<" ";
-        } cout<<endl;
+        cout << dp[n-1] << " " << cnt << endl;
+        for (int i = 0; i < n; ++i) {
+            cout << ans[i] << " ";
+        } cout << endl;
 
     }
  

@@ -13,24 +13,24 @@ int main() {
     #endif
 
     int tt = 1; 
-    cin>>tt;
+    cin >> tt;
     for (int test = 1; test <= tt; test++) {
         int n, m; cin>>n>>m;
         long long ans = 0LL;
         for (int i = 0; i < m; ++i) {
             int l, r;
             long long x; 
-            cin>>l>>r>>x;
+            cin >> l >> r >> x;
             ans |= x;
         }
 
-        ans%=MOD;
+        ans %= MOD;
 
         for (int i = 0; i < n-1; ++i) {
-            ans = (ans*2)%MOD;
+            ans = (ans*2) % MOD;
         }
 
-        cout<<ans<<endl;
+        cout << ans << endl;
     }
 
     return 0;

@@ -17,13 +17,12 @@ int main() {
  
     int test = 1;
     //cin>>test;
-    for (long long tt = 0; tt < test; ++tt)
-    {
+    for (long long tt = 0; tt < test; ++tt) {
         pair<int, int> p[3];
         int rad[3];
-        for (int i = 0; i < 3; ++i)
-        {
-            int x, y; cin>>x>>y>>rad[i];
+        for (int i = 0; i < 3; ++i) {
+            int x, y; 
+            cin >> x >> y >> rad[i];
             p[i] = {x, y};
         }
 

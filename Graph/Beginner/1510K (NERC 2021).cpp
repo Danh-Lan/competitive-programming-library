@@ -65,10 +65,9 @@ int main() {
 			int cur = 1;
 			bool back = false;
 			int cnt = 0;
-			//int breakloop = 0;
+
 			// 1 2 5 6 3 4 1 2
 			while (cnt < 2*n) {
-				//++breakloop; if (breakloop > 1200) break;
 				cycle[cur] = cnt;
 				cycle[cur+1] = cnt+1;
 				if (back == false) cur = cur+1+n;
