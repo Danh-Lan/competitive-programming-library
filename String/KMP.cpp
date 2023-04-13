@@ -7,7 +7,7 @@ using namespace std;
 vector<int> build_lps(vector<int> p) {
     int sz = p.size();
     vector<int> lps;
-    lps.assign(sz + 1, 0);
+    lps.assign(sz, 0);
     int j = 0;
     lps[0] = 0;
     for (int i = 1; i < sz; i++) {
