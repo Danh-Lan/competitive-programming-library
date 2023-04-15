@@ -43,7 +43,7 @@ int main() {
         int n, m; cin >> n >> m;
         for (int i = 1; i <= m; ++i) {
             int x; cin >> x;
-            sparse[i][0] = x;      
+            sparse[i][0] = x;
         }
         build(m);
         int q; cin >> q;
