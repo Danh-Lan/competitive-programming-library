@@ -6,8 +6,8 @@ const long long MOD = 1e9 + 7;
 
 long long modPow(long long a, long long x, long long p) {
     long long res = 1;
-    while(x > 0) {
-        if( x % 2 != 0) {
+    while (x > 0) {
+        if (x % 2 != 0) {
             res = (res * a) % p;
         }
         a = (a * a) % p;
@@ -21,7 +21,7 @@ long long modInverse(long long a, long long p) {
 }
 long long modBinomial(long long n, long long k, long long p) {
     long long numerator = 1;
-    for (int i=0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
         numerator = (numerator * (n-i) ) % p;
     }
 
