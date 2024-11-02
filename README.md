@@ -8,7 +8,7 @@ Convention : [Site] - [Problem code or name].cpp
 - `CC - BOMBBLAST.cpp` --> Codechef problem
 - `CSES - Dynamic RMQ.cpp` --> CSES Problemset
 
-Since LeetCode DSA problems are relatively simple compare to Codeforces or Codechef, I put it in a separate folder, so Leetcode problems file won't follow the above naming convention : It only has problem code or name
+LeetCode DSA problems are put in a separate folder. Leetcode problems file name only has problem code and name
 
 For example : `99. Recover BST.cpp` instead of `LC - 99. RecoverBST.cpp`
 
